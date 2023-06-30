@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Api", "ToDoApp.Api\ToDoApp.Api.csproj", "{8243A794-4EFF-45C4-829D-DE6832F2D8CE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8243A794-4EFF-45C4-829D-DE6832F2D8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8243A794-4EFF-45C4-829D-DE6832F2D8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8243A794-4EFF-45C4-829D-DE6832F2D8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8243A794-4EFF-45C4-829D-DE6832F2D8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7AF8EB5-9C41-490B-8A09-36A40FA1D9C9}
+	EndGlobalSection
+EndGlobal
