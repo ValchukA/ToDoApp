@@ -2,7 +2,43 @@ version: '3.4'
 
 services:
   todoapp.api:
-    image: ${DOCKER_REGISTRY-}todoappapi
     build:
       context: .
-      dockerfile: ToDoApp.Api/Dockerfile
+      dockerfile: ../ToDoApp.Api/Dockerfile
+    depends_on:
+      - mongodb
+      - elasticsearch
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Serilog__WriteTo__0__Name=Elasticsearch
+      - Serilog__WriteTo__0__Args__NodeUris=http://elasticsearch:9200
+      - MongoDb__DatabaseName=todoapp
+      - MongoDb__ConnectionString=mongodb://mongodb:27017
+    ports:
+      - "8080:80"
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+
+  elasticsearch:
+    image: elasticsearch:8.8.1
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - elasticsearchdata:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:8.8.1
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+
+volumes:
+  mongodbdata:
+  elasticsearchdata:

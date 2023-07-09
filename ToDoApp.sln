@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Api", "ToDoApp.Api\ToDoApp.Api.csproj", "{8243A794-4EFF-45C4-829D-DE6832F2D8CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Api", "ToDoApp.Api\ToDoApp.Api.csproj", "{8243A794-4EFF-45C4-829D-DE6832F2D8CE}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "ToDoApp.Compose\docker-compose.dcproj", "{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Common", "ToDoApp.Common\ToDoApp.Common.csproj", "{0EED78BE-235B-402C-AD55-46E5CD68C814}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Bll", "ToDoApp.Bll\ToDoApp.Bll.csproj", "{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Storage.MongoDb", "ToDoApp.Storage.MongoDb\ToDoApp.Storage.MongoDb.csproj", "{8D745E1C-C287-42F4-A52D-B53829545A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D745E1C-C287-42F4-A52D-B53829545A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D745E1C-C287-42F4-A52D-B53829545A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D745E1C-C287-42F4-A52D-B53829545A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D745E1C-C287-42F4-A52D-B53829545A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

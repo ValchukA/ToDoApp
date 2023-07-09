@@ -1,0 +1,27 @@
+name: .NET CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ToDoApp.Api/**
+      - ToDoApp.Bll/**
+      - ToDoApp.Common/**
+      - ToDoApp.Storage.MongoDb/**
+
+jobs:
+  build:
+    name: Build .NET projects
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Build
+        run: dotnet build /warnaserror
