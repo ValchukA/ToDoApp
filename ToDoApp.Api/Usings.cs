@@ -16,4 +16,3 @@ global using ToDoApp.Bll.Models.Commands;
 global using ToDoApp.Bll.Models.Queries;
 global using ToDoApp.Bll.Models.Results;
 global using ToDoApp.Common.Mapping;
-

@@ -16,5 +16,3 @@ global using ToDoApp.Storage.MongoDb.Daos;
 global using ToDoApp.Storage.MongoDb.Entities;
 global using ToDoApp.Storage.MongoDb.Options;
 global using ToDoApp.Storage.MongoDb.Validation;
-
-
