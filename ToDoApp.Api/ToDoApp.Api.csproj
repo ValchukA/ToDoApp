@@ -38,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ToDoApp.Bll\ToDoApp.Bll.csproj" />
     <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
+    <ProjectReference Include="..\ToDoApp.Storage.MongoDb\ToDoApp.Storage.MongoDb.csproj" />
   </ItemGroup>
 
 </Project>
