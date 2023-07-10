@@ -12,14 +12,12 @@ internal static class ServiceCollectionExtensions
 
         services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
-        services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
 
         services.AddAutoMapper(typeof(ServiceCollectionExtensions));
         services.AddSingleton<IObjectMapper<TasksController>, AutoMapperWrapper>();
 
         services.AddFluentValidationAutoValidation();
-        services.AddSingleton<IValidator<CreateTaskRequest>, CreateTaskRequestValidator>();
-        ValidatorOptions.Global.LanguageManager.Enabled = false;
+        services.AddValidatorsFromAssemblyContaining(typeof(ServiceCollectionExtensions), includeInternalTypes: true);
     }
 }

@@ -13,7 +13,7 @@ internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskResult>
 
     public async Task<TaskResult> Handle(GetTaskQuery request, CancellationToken cancellationToken)
     {
-        var taskDto = await _taskDao.GetAsync(request.TaskId);
+        var taskDto = await _taskDao.GetAsync(request.Id);
 
         return taskDto is null ? throw new NotFoundException() : _mapper.Map<TaskResult>(taskDto);
     }

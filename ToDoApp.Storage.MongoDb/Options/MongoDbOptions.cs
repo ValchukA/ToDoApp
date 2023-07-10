@@ -1,6 +1,6 @@
 ﻿namespace ToDoApp.Storage.MongoDb.Options;
 
-public record MongoDbOptions
+internal record MongoDbOptions
 {
     public const string SectionKey = "MongoDb";
 
