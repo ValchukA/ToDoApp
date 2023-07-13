@@ -4,12 +4,7 @@ internal static class ServiceCollectionExtensions
 {
     public static void AddApiServices(this IServiceCollection services)
     {
-        services.AddControllers(options =>
-        {
-            options.Filters.Add<ValidationFilter>();
-            options.Filters.Add<ExceptionFilter>();
-        });
-
+        services.AddControllers(options => options.Filters.Add<ValidationFilter>());
         services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
         services.AddSwaggerGen();

@@ -2,6 +2,10 @@
 
 internal class ValidationFilter : IAsyncActionFilter
 {
+    private readonly ILogger<ExceptionMiddleware> _logger;
+
+    public ValidationFilter(ILogger<ExceptionMiddleware> logger) => _logger = logger;
+
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
         if (!context.ModelState.IsValid)
@@ -12,6 +16,8 @@ internal class ValidationFilter : IAsyncActionFilter
 
             var errorResponse = new ErrorResponse(string.Join(" ", errorMessages));
             context.Result = new BadRequestObjectResult(errorResponse);
+
+            _logger.LogError("Model validation failed");
 
             return;
         }

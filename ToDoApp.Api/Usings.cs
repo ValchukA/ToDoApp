@@ -11,6 +11,7 @@ global using ToDoApp.Api.Contracts.Responses;
 global using ToDoApp.Api.Controllers;
 global using ToDoApp.Api.Extensions;
 global using ToDoApp.Api.Filters;
+global using ToDoApp.Api.Middleware;
 global using ToDoApp.Bll.Exceptions;
 global using ToDoApp.Bll.Extensions;
 global using ToDoApp.Bll.Models.Commands;

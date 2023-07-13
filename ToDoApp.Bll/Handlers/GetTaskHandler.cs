@@ -15,6 +15,7 @@ internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskResult>
     {
         var taskDto = await _taskDao.GetAsync(request.Id);
 
-        return taskDto is null ? throw new NotFoundException() : _mapper.Map<TaskResult>(taskDto);
+        return taskDto is null
+            ? throw new NotFoundException { ResourceId = request.Id } : _mapper.Map<TaskResult>(taskDto);
     }
 }

@@ -2,8 +2,5 @@
 
 public class NotFoundException : Exception
 {
-    public NotFoundException()
-        : base("Resource was not found.")
-    {
-    }
+    public required Guid ResourceId { get; init; }
 }
