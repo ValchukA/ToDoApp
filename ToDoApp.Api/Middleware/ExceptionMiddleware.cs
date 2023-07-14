@@ -22,22 +22,26 @@ internal class ExceptionMiddleware
         catch (NotFoundException exception)
         {
             var responseMessage = $"Resource with ID {exception.ResourceId} was not found";
-            await WriteErrorResponseToContextAsync(httpContext, responseMessage, 404);
+            await WriteErrorResponseToContextAsync(httpContext, responseMessage, exception, 404);
 
-            _logger.LogError("Resource with ID {ResourceId} was not found", exception.ResourceId);
+            _logger.LogError(exception, "Resource with ID {ResourceId} was not found", exception.ResourceId);
         }
         catch (Exception exception)
         {
-            var responseMessage = _isDevelopmentEnvironment ? exception.ToString() : "Unexpected error";
-            await WriteErrorResponseToContextAsync(httpContext, responseMessage, 500);
+            await WriteErrorResponseToContextAsync(httpContext, "Unexpected error", exception, 500);
 
-            _logger.LogError("Unexpected error", exception);
+            _logger.LogError(exception, "Unexpected error");
         }
     }
 
-    private static async Task WriteErrorResponseToContextAsync(HttpContext httpContext, string errorResponseMessage, int statusCode)
+    private async Task WriteErrorResponseToContextAsync(
+        HttpContext httpContext,
+        string errorResponseMessage,
+        Exception exception,
+        int statusCode)
     {
         httpContext.Response.StatusCode = statusCode;
-        await httpContext.Response.WriteAsJsonAsync(new ErrorResponse(errorResponseMessage));
+        var errorResponse = _isDevelopmentEnvironment ? exception.ToString() : errorResponseMessage;
+        await httpContext.Response.WriteAsJsonAsync(errorResponse);
     }
 }
