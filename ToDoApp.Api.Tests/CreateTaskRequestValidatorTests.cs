@@ -48,5 +48,5 @@ public class CreateTaskRequestValidatorTests
         new object[] { new CreateTaskRequest { Title = null!, Description = "Description" } },
         new object[] { new CreateTaskRequest { Title = "Fifth task", Description = "Long description of the fifth task" } },
         new object[] { new CreateTaskRequest { Title = "Long title of the sixth task", Description = "Description" } },
-    };
+    }
 }
