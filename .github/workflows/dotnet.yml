@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - ToDoApp.Api/**
+      - ToDoApp.Api.Tests/**
       - ToDoApp.Bll/**
       - ToDoApp.Common/**
       - ToDoApp.Storage.MongoDb/**
