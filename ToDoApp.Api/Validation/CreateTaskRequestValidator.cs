@@ -2,9 +2,9 @@
 
 internal class CreateTaskRequestValidator : AbstractValidator<CreateTaskRequest>
 {
-    public CreateTaskRequestValidator()
+    public CreateTaskRequestValidator(IOptions<TaskValidationOptions> validationOptions)
     {
-        RuleFor(model => model.Title).NotEmpty().MaximumLength(100);
-        RuleFor(model => model.Description).MaximumLength(2000);
+        RuleFor(model => model.Title).NotEmpty().MaximumLength(validationOptions.Value.MaximumTitleLength);
+        RuleFor(model => model.Description).MaximumLength(validationOptions.Value.MaximumDescriptionLength);
     }
 }

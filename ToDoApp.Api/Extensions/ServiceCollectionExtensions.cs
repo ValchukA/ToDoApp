@@ -13,6 +13,14 @@ internal static class ServiceCollectionExtensions
         services.AddSingleton<IObjectMapper<TasksController>, AutoMapperWrapper>();
 
         services.AddFluentValidationAutoValidation();
-        services.AddValidatorsFromAssemblyContaining(typeof(ServiceCollectionExtensions), includeInternalTypes: true);
+        services.AddValidatorsFromAssemblyContaining(
+            typeof(ServiceCollectionExtensions),
+            ServiceLifetime.Singleton,
+            includeInternalTypes: true);
+
+        services.AddOptions<TaskValidationOptions>()
+            .BindConfiguration(TaskValidationOptions.SectionKey)
+            .ValidateFluentValidation()
+            .ValidateOnStart();
     }
 }
