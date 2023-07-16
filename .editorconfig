@@ -100,3 +100,7 @@ dotnet_diagnostic.SA1600.severity = none
 
 # CS1591: Missing XML comment for publicly visible type or member
 dotnet_diagnostic.CS1591.severity = none
+
+# SA1201: Elements should appear in the correct order
+[*Tests.cs]
+dotnet_diagnostic.SA1201.severity = none
