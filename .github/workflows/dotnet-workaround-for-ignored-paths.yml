@@ -1,0 +1,19 @@
+name: Workaround to pass the required status check of the .NET CI workflow when it's not triggered
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - ToDoApp.Api/**
+      - ToDoApp.Api.Tests/**
+      - ToDoApp.Bll/**
+      - ToDoApp.Common/**
+      - ToDoApp.Storage.MongoDb/**
+
+jobs:
+  build:
+    name: Build .NET projects
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Pass the required status check of the .NET CI workflow when it's not triggered"
