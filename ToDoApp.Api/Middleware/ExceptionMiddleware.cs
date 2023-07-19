@@ -41,7 +41,7 @@ internal class ExceptionMiddleware
         int statusCode)
     {
         httpContext.Response.StatusCode = statusCode;
-        var errorResponse = _isDevelopmentEnvironment ? exception.ToString() : errorResponseMessage;
-        await httpContext.Response.WriteAsJsonAsync(errorResponse);
+        var selectedErrorMessage = _isDevelopmentEnvironment ? exception.ToString() : errorResponseMessage;
+        await httpContext.Response.WriteAsJsonAsync(new ErrorResponse(selectedErrorMessage));
     }
 }
