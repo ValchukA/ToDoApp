@@ -10,7 +10,7 @@ public static class ServiceCollectionExtensions
             .ValidateFluentValidation()
             .ValidateOnStart();
 
-        services.TryAddSingleton(serviceProvider =>
+        services.AddSingleton(serviceProvider =>
         {
             var mongoDbOptions = serviceProvider.GetRequiredService<IOptions<MongoDbOptions>>().Value;
             var settings = MongoClientSettings.FromConnectionString(mongoDbOptions.ConnectionString);
