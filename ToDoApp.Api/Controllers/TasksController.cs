@@ -23,7 +23,7 @@ public class TasksController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<TaskResponse>> CreateTask([FromBody] CreateTaskRequest requestModel)
+    public async Task<ActionResult<TaskResponse>> CreateTaskAsync([FromBody] CreateTaskRequest requestModel)
     {
         var command = _mapper.Map<CreateTaskCommand>(requestModel);
         var result = await _mediator.Send(command);
