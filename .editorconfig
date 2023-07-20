@@ -103,6 +103,7 @@ dotnet_diagnostic.CS1591.severity = none
 
 # IDE0005: Using directive is unnecessary
 dotnet_diagnostic.IDE0005.severity = error
+dotnet_diagnostic.CS8019.severity = silent
 
 # SA1201: Elements should appear in the correct order
 [*Tests.cs]
