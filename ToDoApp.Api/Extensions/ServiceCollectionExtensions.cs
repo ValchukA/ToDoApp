@@ -18,6 +18,9 @@ internal static class ServiceCollectionExtensions
             ServiceLifetime.Singleton,
             includeInternalTypes: true);
 
-        services.AddOptions<TaskValidationOptions>().BindConfiguration(TaskValidationOptions.SectionKey).ValidateFluentValidation().ValidateOnStart();
+        services.AddOptions<TaskValidationOptions>()
+            .BindConfiguration(TaskValidationOptions.SectionKey)
+            .ValidateFluentValidation()
+            .ValidateOnStart();
     }
 }

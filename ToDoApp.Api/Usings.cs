@@ -1,4 +1,4 @@
-﻿global using System;
+﻿global using System.Text.Json;
 global using AutoMapper;
 global using FluentValidation;
 global using FluentValidation.AspNetCore;
