@@ -14,7 +14,7 @@ public class CreateTaskRequestValidatorTests
 
     [Theory]
     [MemberData(nameof(ValidRequestModels))]
-    public void ShouldNotHaveErrors_WhenRequestModelIsValid(CreateTaskRequest requestModel)
+    public void Validate_ShouldNotHaveErrors_WhenRequestModelIsValid(CreateTaskRequest requestModel)
     {
         // Act
         var validationResult = _validator.TestValidate(requestModel);
@@ -25,7 +25,7 @@ public class CreateTaskRequestValidatorTests
 
     [Theory]
     [MemberData(nameof(InvalidRequestModels))]
-    public void ShouldHaveErrors_WhenRequestModelIsInvalid(CreateTaskRequest requestModel)
+    public void Validate_ShouldHaveErrors_WhenRequestModelIsInvalid(CreateTaskRequest requestModel)
     {
         // Act
         var validationResult = _validator.TestValidate(requestModel);
