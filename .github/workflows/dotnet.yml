@@ -10,6 +10,8 @@ on:
       - ToDoApp.Bll/**
       - ToDoApp.Common/**
       - ToDoApp.Storage.MongoDb/**
+      - .editorconfig
+      - Directory.Build.props
 
 jobs:
   build-and-test:

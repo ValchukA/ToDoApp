@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Bll", "ToDoApp.Bll\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Storage.MongoDb", "ToDoApp.Storage.MongoDb\ToDoApp.Storage.MongoDb.csproj", "{8D745E1C-C287-42F4-A52D-B53829545A93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Api.Tests", "ToDoApp.Api.Tests\ToDoApp.Api.Tests.csproj", "{2C761A1A-171C-4306-B881-C81A594AE55A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Api.Tests", "ToDoApp.Api.Tests\ToDoApp.Api.Tests.csproj", "{2C761A1A-171C-4306-B881-C81A594AE55A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C0E68D29-6B3C-4B50-BC57-2D96974F979B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
