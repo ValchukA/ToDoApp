@@ -1,3 +1,4 @@
+global using System.Net;
 global using System.Net.Http.Json;
 global using DotNet.Testcontainers.Builders;
 global using DotNet.Testcontainers.Containers;

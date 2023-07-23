@@ -18,7 +18,7 @@ public class TasksControllerTests : IClassFixture<ApiSetup>
         // Assert
         var taskResponse = await response.Content.ReadFromJsonAsync<TaskResponse>();
 
-        response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
+        response.StatusCode.Should().Be(HttpStatusCode.Created);
         taskResponse!.Id.Should().NotBeEmpty();
         taskResponse.Title.Should().Be(createTaskRequest.Title);
         taskResponse.Description.Should().Be(createTaskRequest.Description);
