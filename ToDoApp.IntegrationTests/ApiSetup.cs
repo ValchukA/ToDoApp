@@ -36,7 +36,12 @@ public class ApiSetup : IAsyncLifetime
 
     public HttpClient HttpClient { get; }
 
-    public Task DisposeAsync() => Task.CompletedTask;
+    public Task DisposeAsync()
+    {
+        HttpClient.Dispose();
+
+        return Task.CompletedTask;
+    }
 
     public async Task InitializeAsync()
     {
