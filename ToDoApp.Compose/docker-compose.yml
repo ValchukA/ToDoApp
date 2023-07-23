@@ -3,8 +3,8 @@ version: '3.4'
 services:
   todoapp.api:
     build:
-      context: .
-      dockerfile: ../ToDoApp.Api/Dockerfile
+      context: ..
+      dockerfile: ToDoApp.Api/Dockerfile
     depends_on:
       - mongodb
       - elasticsearch
@@ -16,7 +16,7 @@ services:
       - "8080:80"
 
   mongodb:
-    image: mongo
+    image: mongo:6.0
     ports:
       - "27017:27017"
     volumes:

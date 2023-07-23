@@ -9,6 +9,7 @@ on:
       - ToDoApp.Api.Tests/**
       - ToDoApp.Bll/**
       - ToDoApp.Common/**
+      - ToDoApp.IntegrationTests/**
       - ToDoApp.Storage.MongoDb/**
       - .editorconfig
       - Directory.Build.props

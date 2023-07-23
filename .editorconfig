@@ -115,3 +115,7 @@ dotnet_diagnostic.S2326.severity = none
 # SA1201: Elements should appear in the correct order
 [*Tests.cs]
 dotnet_diagnostic.SA1201.severity = none
+
+# VSTHRD200: Use "Async" suffix for async methods
+[*Tests.cs]
+dotnet_diagnostic.VSTHRD200.severity = none
