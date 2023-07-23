@@ -9,7 +9,6 @@
     <DockerServiceName>todoapp.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".dockerignore" />
     <None Include="docker-compose.yml" />
   </ItemGroup>
 </Project>
