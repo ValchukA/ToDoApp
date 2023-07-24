@@ -3,9 +3,9 @@
 internal class TaskDao : ITaskDao
 {
     private readonly IMongoCollection<TaskEntity> _tasksCollection;
-    private readonly IObjectMapper<TaskDao> _mapper;
+    private readonly IObjectMapper _mapper;
 
-    public TaskDao(IMongoDatabase database, IObjectMapper<TaskDao> mapper)
+    public TaskDao(IMongoDatabase database, IObjectMapper mapper)
     {
         _tasksCollection = GetCollection<TaskEntity>(database);
         _mapper = mapper;
@@ -17,13 +17,12 @@ internal class TaskDao : ITaskDao
             .Find(task => task.Id == taskId)
             .FirstOrDefaultAsync();
 
-        return _mapper.Map<TaskDto>(taskEntity);
+        return _mapper.MapToDto(taskEntity);
     }
 
     public async Task<Guid> AddAsync(CreateTaskDto taskDto)
     {
-        var taskEntity = _mapper.Map<TaskEntity>(taskDto);
-
+        var taskEntity = _mapper.MapToEntity(taskDto);
         await _tasksCollection.InsertOneAsync(taskEntity);
 
         return taskEntity.Id;

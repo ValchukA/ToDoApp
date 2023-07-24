@@ -20,7 +20,6 @@ public static class ServiceCollectionExtensions
         });
         services.AddSingleton<ITaskDao, TaskDao>();
 
-        services.AddAutoMapper(typeof(ServiceCollectionExtensions));
-        services.AddSingleton<IObjectMapper<TaskDao>, AutoMapperWrapper>();
+        services.AddSingleton<IObjectMapper, MapperlyMapper>();
     }
 }
