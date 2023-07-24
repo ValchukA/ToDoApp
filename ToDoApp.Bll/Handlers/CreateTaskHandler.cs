@@ -3,9 +3,9 @@
 internal class CreateTaskHandler : IRequestHandler<CreateTaskCommand, TaskResult>
 {
     private readonly ITaskDao _taskDao;
-    private readonly IObjectMapper<CreateTaskHandler> _mapper;
+    private readonly IObjectMapper _mapper;
 
-    public CreateTaskHandler(ITaskDao taskDao, IObjectMapper<CreateTaskHandler> mapper)
+    public CreateTaskHandler(ITaskDao taskDao, IObjectMapper mapper)
     {
         _taskDao = taskDao;
         _mapper = mapper;
@@ -13,10 +13,9 @@ internal class CreateTaskHandler : IRequestHandler<CreateTaskCommand, TaskResult
 
     public async Task<TaskResult> Handle(CreateTaskCommand request, CancellationToken cancellationToken)
     {
-        var taskDto = _mapper.Map<CreateTaskDto>(request) with { CreationDateUtc = DateTime.UtcNow };
-
+        var taskDto = _mapper.MapToDto(request, DateTime.UtcNow);
         var taskId = await _taskDao.AddAsync(taskDto);
 
-        return _mapper.Map<TaskResult>(taskDto) with { Id = taskId };
+        return _mapper.MapToResult(taskDto, taskId);
     }
 }

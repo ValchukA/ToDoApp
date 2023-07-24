@@ -6,8 +6,6 @@ public static class ServiceCollectionExtensions
     {
         services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining(typeof(ServiceCollectionExtensions)));
 
-        services.AddAutoMapper(typeof(ServiceCollectionExtensions));
-        services.AddSingleton<IObjectMapper<GetTaskHandler>, AutoMapperWrapper>();
-        services.AddSingleton<IObjectMapper<CreateTaskHandler>, AutoMapperWrapper>();
+        services.AddSingleton<IObjectMapper, ObjectMapper>();
     }
 }

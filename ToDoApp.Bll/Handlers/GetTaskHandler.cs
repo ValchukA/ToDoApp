@@ -3,9 +3,9 @@
 internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskResult>
 {
     private readonly ITaskDao _taskDao;
-    private readonly IObjectMapper<GetTaskHandler> _mapper;
+    private readonly IObjectMapper _mapper;
 
-    public GetTaskHandler(ITaskDao taskDao, IObjectMapper<GetTaskHandler> mapper)
+    public GetTaskHandler(ITaskDao taskDao, IObjectMapper mapper)
     {
         _taskDao = taskDao;
         _mapper = mapper;
@@ -16,6 +16,6 @@ internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskResult>
         var taskDto = await _taskDao.GetAsync(request.Id);
 
         return taskDto is null
-            ? throw new NotFoundException { ResourceId = request.Id } : _mapper.Map<TaskResult>(taskDto);
+            ? throw new NotFoundException { ResourceId = request.Id } : _mapper.MapToResult(taskDto);
     }
 }

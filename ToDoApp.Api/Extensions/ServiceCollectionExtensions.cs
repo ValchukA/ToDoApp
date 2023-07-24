@@ -9,8 +9,7 @@ internal static class ServiceCollectionExtensions
 
         services.AddSwaggerGen();
 
-        services.AddAutoMapper(typeof(ServiceCollectionExtensions));
-        services.AddSingleton<IObjectMapper<TasksController>, AutoMapperWrapper>();
+        services.AddSingleton<IObjectMapper, AutoMapperWrapper>();
 
         services.AddFluentValidationAutoValidation();
         services.AddValidatorsFromAssemblyContaining(
