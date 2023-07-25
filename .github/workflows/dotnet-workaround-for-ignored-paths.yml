@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - backend/*
+      - backend/**
 
 jobs:
   build-and-test:
