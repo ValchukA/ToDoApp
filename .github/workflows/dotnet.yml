@@ -5,14 +5,7 @@ on:
     branches:
       - master
     paths:
-      - ToDoApp.Api/**
-      - ToDoApp.Api.Tests/**
-      - ToDoApp.Bll/**
-      - ToDoApp.Common/**
-      - ToDoApp.IntegrationTests/**
-      - ToDoApp.Storage.MongoDb/**
-      - .editorconfig
-      - Directory.Build.props
+      - backend/*
 
 jobs:
   build-and-test:

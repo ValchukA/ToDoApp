@@ -19,8 +19,8 @@ public class ApiSetup : IAsyncLifetime
             .Build();
 
         _apiImage = new ImageFromDockerfileBuilder()
-            .WithDockerfileDirectory(CommonDirectoryPath.GetProjectDirectory(), "..")
-            .WithDockerfile("ToDoApp.Api/Dockerfile")
+            .WithDockerfileDirectory(CommonDirectoryPath.GetProjectDirectory(), "../..")
+            .WithDockerfile("backend/ToDoApp.Api/Dockerfile")
             .Build();
 
         _apiContainer = new ContainerBuilder()
