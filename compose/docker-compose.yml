@@ -10,6 +10,7 @@ services:
       - elasticsearch
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80 
       - Serilog__WriteTo__0__Args__NodeUris=http://elasticsearch:9200
       - MongoDb__ConnectionString=mongodb://mongodb:27017
     ports:
