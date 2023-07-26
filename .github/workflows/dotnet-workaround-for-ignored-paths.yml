@@ -6,6 +6,7 @@ on:
       - master
     paths-ignore:
       - backend/**
+      - .dockerignore 
 
 jobs:
   build-and-test:
