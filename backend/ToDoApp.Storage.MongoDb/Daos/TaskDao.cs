@@ -17,7 +17,7 @@ internal class TaskDao : ITaskDao
             .Find(task => task.Id == taskId)
             .FirstOrDefaultAsync();
 
-        return _mapper.MapToDto(taskEntity);
+        return taskEntity is null ? null : _mapper.MapToDto(taskEntity);
     }
 
     public async Task<Guid> AddAsync(CreateTaskDto taskDto)
