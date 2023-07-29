@@ -13,6 +13,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<RequestIdLoggingMiddleware>();
 app.UseSerilogRequestLogging();
 app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
