@@ -6,10 +6,9 @@ public class CreateTaskRequestValidatorTests
 
     public CreateTaskRequestValidatorTests()
     {
-        var validationOptions = new TaskValidationOptions { MaximumTitleLength = 15, MaximumDescriptionLength = 30 };
-        var validationOptionsMock = new Mock<IOptions<TaskValidationOptions>>();
-        validationOptionsMock.Setup(options => options.Value).Returns(validationOptions);
-        _validator = new CreateTaskRequestValidator(validationOptionsMock.Object);
+        var validationOptions = Substitute.For<IOptions<TaskValidationOptions>>();
+        validationOptions.Value.Returns(new TaskValidationOptions { MaximumTitleLength = 15, MaximumDescriptionLength = 30 });
+        _validator = new CreateTaskRequestValidator(validationOptions);
     }
 
     [Theory]
