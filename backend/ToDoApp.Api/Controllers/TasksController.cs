@@ -13,7 +13,7 @@ public class TasksController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet("{id}", Name = nameof(GetTaskAsync))]
+    [HttpGet($"{{{nameof(id)}}}", Name = nameof(GetTaskAsync))]
     public async Task<ActionResult<TaskResponse>> GetTaskAsync(Guid id)
     {
         var result = await _mediator.Send(new GetTaskQuery(id));
