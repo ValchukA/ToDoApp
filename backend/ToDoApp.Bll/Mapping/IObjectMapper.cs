@@ -2,7 +2,7 @@
 
 internal interface IObjectMapper
 {
-    CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc);
+    CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc, string createdBy);
 
     TaskResult MapToResult(CreateTaskDto createTaskDto, Guid taskId);
 

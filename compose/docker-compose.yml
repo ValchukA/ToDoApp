@@ -7,21 +7,39 @@ services:
       dockerfile: backend/ToDoApp.Api/Dockerfile
     depends_on:
       - mongodb
+      - keycloak
       - elasticsearch
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
       - Serilog__WriteTo__0__Args__NodeUris=http://elasticsearch:9200
       - MongoDb__ConnectionString=mongodb://mongodb:27017
+      - Keycloak__Authority=http://keycloak:8080/realms/todoapp
+      - Keycloak__SwaggerOidcUrl=http://localhost:8081/realms/todoapp/.well-known/openid-configuration
     ports:
       - "8080:80"
 
   mongodb:
-    image: mongo:6.0
+    image: mongo:7.0.1
     ports:
       - "27017:27017"
     volumes:
       - mongodbdata:/data/db
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.1
+    command:
+      - start-dev
+      - --import-realm
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=adminpassword
+      - KC_HOSTNAME_URL=http://localhost:8081
+    ports:
+      - "8081:8080"
+    volumes:
+      - keycloakdata:/opt/keycloak/data
+      - ../keycloak-todoapp-realm.json:/opt/keycloak/data/import/keycloak-todoapp-realm.json
 
   elasticsearch:
     image: elasticsearch:8.8.1
@@ -40,4 +58,5 @@ services:
 
 volumes:
   mongodbdata:
+  keycloakdata:
   elasticsearchdata:

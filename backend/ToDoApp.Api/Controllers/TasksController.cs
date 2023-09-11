@@ -18,11 +18,11 @@ public class TasksController : ControllerBase
     {
         var result = await _mediator.Send(new GetTaskQuery(id));
 
-        return Ok(_mapper.MapToResponse(result));
+        return _mapper.MapToResponse(result);
     }
 
     [HttpPost]
-    public async Task<ActionResult<TaskResponse>> CreateTaskAsync([FromBody] CreateTaskRequest requestModel)
+    public async Task<ActionResult<TaskResponse>> CreateTaskAsync(CreateTaskRequest requestModel)
     {
         var result = await _mediator.Send(_mapper.MapToCommand(requestModel));
         var response = _mapper.MapToResponse(result);

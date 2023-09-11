@@ -8,8 +8,7 @@ internal class AutoMapperWrapper : IObjectMapper
         configurationExpression.CreateMap<TaskResult, TaskResponse>();
     }));
 
-    public CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest)
-        => _mapper.Map<CreateTaskCommand>(createTaskRequest);
+    public CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest) => _mapper.Map<CreateTaskCommand>(createTaskRequest);
 
     public TaskResponse MapToResponse(TaskResult taskResult) => _mapper.Map<TaskResponse>(taskResult);
 }

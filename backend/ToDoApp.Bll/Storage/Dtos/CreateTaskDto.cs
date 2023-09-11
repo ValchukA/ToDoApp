@@ -7,4 +7,6 @@ public record CreateTaskDto
     public string? Description { get; init; }
 
     public required DateTime CreationDateUtc { get; init; }
+
+    public required string CreatedBy { get; init; }
 }

@@ -10,4 +10,6 @@ internal record TaskEntity
     public string? Description { get; init; }
 
     public required DateTime CreationDateUtc { get; init; }
+
+    public required string CreatedBy { get; init; }
 }

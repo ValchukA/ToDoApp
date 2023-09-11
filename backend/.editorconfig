@@ -154,9 +154,9 @@ dotnet_diagnostic.RMG020.severity = warning
 [*Exception.cs]
 dotnet_diagnostic.S3925.severity = none
 
-# S2326: Unused type parameters should be removed
-[IObjectMapper.cs]
-dotnet_diagnostic.S2326.severity = none
+# CA2254: Template should be a static expression
+[ExceptionMiddleware.cs]
+dotnet_diagnostic.CA2254.severity = none
 
 # SA1201: Elements should appear in the correct order
 [*Tests.cs]

@@ -2,11 +2,12 @@
 
 internal class ObjectMapper : IObjectMapper
 {
-    public CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc) => new()
+    public CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc, string createdBy) => new()
     {
         Title = createTaskCommand.Title,
         Description = createTaskCommand.Description,
         CreationDateUtc = creationDateUtc,
+        CreatedBy = createdBy,
     };
 
     public TaskResult MapToResult(CreateTaskDto createTaskDto, Guid taskId) => new()
