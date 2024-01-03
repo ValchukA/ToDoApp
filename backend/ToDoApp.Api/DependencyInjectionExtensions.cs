@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.Api;
+﻿using ToDoApp.Api.Auth;
+
+namespace ToDoApp.Api;
 
 internal static class DependencyInjectionExtensions
 {
@@ -17,7 +19,7 @@ internal static class DependencyInjectionExtensions
     private static void AddAuth(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)
     {
         services.AddHttpContextAccessor();
-        services.AddScoped<IUser, User.User>();
+        services.AddScoped<IUser, User>();
         services.AddAuthentication().AddJwtBearer(options =>
         {
             options.Authority = authOptions.Authority;

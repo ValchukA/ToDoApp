@@ -1,3 +1,5 @@
+using ToDoApp.Api.Auth;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((_, _, configuration) => configuration.ReadFrom.Configuration(builder.Configuration));
 
