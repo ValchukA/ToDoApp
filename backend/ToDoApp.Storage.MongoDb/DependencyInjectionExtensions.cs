@@ -2,7 +2,7 @@
 
 public static class DependencyInjectionExtensions
 {
-    public static void AddMongoStorageServices(this IServiceCollection services, IConfigurationSection configuration)
+    public static void AddMongoStorageServices(this IServiceCollection services, IConfiguration configuration)
     {
         var mongoDbOptions = configuration.GetRequiredSection(MongoDbOptions.SectionKey).Get<MongoDbOptions>()!;
         new MongoDbOptionsValidator().ValidateAndThrow(mongoDbOptions);

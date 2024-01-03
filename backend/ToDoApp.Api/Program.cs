@@ -6,7 +6,7 @@ new KeycloakOptionsValidator(builder.Environment.IsDevelopment()).ValidateAndThr
 
 builder.Services.AddApiServices(authOptions, builder.Environment);
 builder.Services.AddBllServices();
-builder.Services.AddMongoStorageServices();
+builder.Services.AddMongoStorageServices(builder.Configuration);
 
 var app = builder.Build();
 
