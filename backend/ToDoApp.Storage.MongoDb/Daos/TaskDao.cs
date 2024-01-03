@@ -2,7 +2,7 @@
 
 namespace ToDoApp.Storage.MongoDb.Daos;
 
-internal class TaskDao : ITaskDao
+internal class TaskDao : ITaskRepository
 {
     private readonly IMongoCollection<TaskEntity> _tasksCollection;
     private readonly IObjectMapper _mapper;

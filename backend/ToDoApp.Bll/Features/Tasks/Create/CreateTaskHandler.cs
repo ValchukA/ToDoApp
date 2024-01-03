@@ -1,15 +1,12 @@
-﻿using ToDoApp.Bll.Features.Common;
-using ToDoApp.Bll.Features.Common.Mapping;
-
-namespace ToDoApp.Bll.Features.Tasks.Create;
+﻿namespace ToDoApp.Bll.Features.Tasks.Create;
 
 internal class CreateTaskHandler : IRequestHandler<CreateTaskCommand, TaskModel>
 {
-    private readonly ITaskDao _taskDao;
+    private readonly ITaskRepository _taskDao;
     private readonly IUser _user;
-    private readonly ITaskMapper _mapper;
+    private readonly IObjectMapper _mapper;
 
-    public CreateTaskHandler(ITaskDao taskDao, IUser user, ITaskMapper mapper)
+    public CreateTaskHandler(ITaskRepository taskDao, IUser user, IObjectMapper mapper)
     {
         _taskDao = taskDao;
         _user = user;
@@ -18,9 +15,9 @@ internal class CreateTaskHandler : IRequestHandler<CreateTaskCommand, TaskModel>
 
     public async Task<TaskModel> Handle(CreateTaskCommand request, CancellationToken cancellationToken)
     {
-        var taskDto = _mapper.MapToDto(request, DateTime.UtcNow, _user.Username);
-        var taskId = await _taskDao.AddAsync(taskDto);
+        var taskModel = _mapper.MapToModel(request, Guid.NewGuid(), _user.Username);
+        await _taskDao.CreateAsync(taskModel);
 
-        return _mapper.MapToResult(taskDto, taskId);
+        return taskModel;
     }
 }

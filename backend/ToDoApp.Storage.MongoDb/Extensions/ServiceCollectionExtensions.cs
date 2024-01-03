@@ -20,7 +20,7 @@ public static class ServiceCollectionExtensions
 
             return new MongoClient(settings).GetDatabase(mongoDbOptions.DatabaseName);
         });
-        services.AddSingleton<ITaskDao, TaskDao>();
+        services.AddSingleton<ITaskRepository, TaskDao>();
 
         services.AddSingleton<IObjectMapper, MapperlyMapper>();
     }

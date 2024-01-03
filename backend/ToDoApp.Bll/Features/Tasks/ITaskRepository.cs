@@ -1,8 +1,8 @@
 ﻿namespace ToDoApp.Bll.Features.Tasks;
 
-public interface ITaskDao
+public interface ITaskRepository
 {
     Task<TaskModel?> GetAsync(Guid taskId);
 
-    Task<Guid> AddAsync(TaskModel task);
+    Task CreateAsync(TaskModel taskModel);
 }
