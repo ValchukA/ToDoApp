@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Bll.Exceptions;
+﻿namespace ToDoApp.Bll.Features.Exceptions;
 
 public class NotFoundException : Exception
 {

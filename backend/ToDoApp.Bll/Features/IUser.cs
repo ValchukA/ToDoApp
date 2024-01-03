@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Bll;
+﻿namespace ToDoApp.Bll.Features;
 
 public interface IUser
 {

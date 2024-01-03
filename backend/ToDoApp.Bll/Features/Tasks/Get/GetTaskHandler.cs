@@ -1,19 +1,22 @@
-﻿namespace ToDoApp.Bll.Handlers;
+﻿using ToDoApp.Bll.Features;
+using ToDoApp.Bll.Features.Tasks.Mapping;
 
-internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskResult>
+namespace ToDoApp.Bll.Features.Tasks.Get;
+
+internal class GetTaskHandler : IRequestHandler<GetTaskQuery, TaskModel>
 {
     private readonly ITaskDao _taskDao;
     private readonly IUser _user;
-    private readonly IObjectMapper _mapper;
+    private readonly ITaskMapper _mapper;
 
-    public GetTaskHandler(ITaskDao taskDao, IUser user, IObjectMapper mapper)
+    public GetTaskHandler(ITaskDao taskDao, IUser user, ITaskMapper mapper)
     {
         _taskDao = taskDao;
         _user = user;
         _mapper = mapper;
     }
 
-    public async Task<TaskResult> Handle(GetTaskQuery request, CancellationToken cancellationToken)
+    public async Task<TaskModel> Handle(GetTaskQuery request, CancellationToken cancellationToken)
     {
         var taskDto = await _taskDao.GetAsync(request.Id);
 

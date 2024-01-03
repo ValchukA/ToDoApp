@@ -1,6 +1,6 @@
-﻿namespace ToDoApp.Bll.Models.Results;
+﻿namespace ToDoApp.Bll.Features.Tasks;
 
-public record TaskResult
+public record TaskModel
 {
     public required Guid Id { get; init; }
 

@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.Storage.MongoDb.Daos;
+﻿using ToDoApp.Bll.Features.Tasks;
+
+namespace ToDoApp.Storage.MongoDb.Daos;
 
 internal class TaskDao : ITaskDao
 {

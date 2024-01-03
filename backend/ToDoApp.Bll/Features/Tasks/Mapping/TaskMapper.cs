@@ -1,6 +1,9 @@
-﻿namespace ToDoApp.Bll.Mapping;
+﻿using ToDoApp.Bll.Features.Tasks;
+using ToDoApp.Bll.Features.Tasks.Create;
 
-internal class ObjectMapper : IObjectMapper
+namespace ToDoApp.Bll.Features.Tasks.Mapping;
+
+internal class TaskMapper : ITaskMapper
 {
     public CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc, string createdBy) => new()
     {
@@ -10,14 +13,14 @@ internal class ObjectMapper : IObjectMapper
         CreatedBy = createdBy,
     };
 
-    public TaskResult MapToResult(CreateTaskDto createTaskDto, Guid taskId) => new()
+    public TaskModel MapToResult(CreateTaskDto createTaskDto, Guid taskId) => new()
     {
         Id = taskId,
         Title = createTaskDto.Title,
         Description = createTaskDto.Description,
     };
 
-    public TaskResult MapToResult(TaskDto taskDto) => new()
+    public TaskModel MapToResult(TaskDto taskDto) => new()
     {
         Id = taskDto.Id,
         Title = taskDto.Title,

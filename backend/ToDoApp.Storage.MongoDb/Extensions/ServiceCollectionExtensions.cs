@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.Storage.MongoDb.Extensions;
+﻿using ToDoApp.Bll.Features.Tasks;
+
+namespace ToDoApp.Storage.MongoDb.Extensions;
 
 public static class ServiceCollectionExtensions
 {
