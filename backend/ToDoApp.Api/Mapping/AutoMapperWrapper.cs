@@ -2,10 +2,10 @@
 
 internal class AutoMapperWrapper : IObjectMapper
 {
-    private static readonly Mapper _mapper = new(new MapperConfiguration(configurationExpression =>
+    private static readonly Mapper _mapper = new(new MapperConfiguration(configuration =>
     {
-        configurationExpression.CreateMap<CreateTaskRequest, CreateTaskCommand>();
-        configurationExpression.CreateMap<TaskResult, TaskResponse>();
+        configuration.CreateMap<CreateTaskRequest, CreateTaskCommand>();
+        configuration.CreateMap<TaskResult, TaskResponse>();
     }));
 
     public CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest) => _mapper.Map<CreateTaskCommand>(createTaskRequest);
