@@ -4,26 +4,14 @@ internal static class DependencyInjectionExtensions
 {
     public static void AddApiServices(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)
     {
-        services.AddControllers(options => options.Filters.Add<ValidationFilter>());
-        services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+        services.AddControllers();
         services.AddSingleton<IObjectMapper, AutoMapperWrapper>();
-        services.AddValidation();
         services.AddAuth(authOptions, environment);
 
         if (environment.IsDevelopment())
         {
             services.AddSwagger(authOptions);
         }
-    }
-
-    private static void AddValidation(this IServiceCollection services)
-    {
-        services.AddFluentValidationAutoValidation();
-        services.AddValidatorsFromAssemblyContaining(
-            typeof(DependencyInjectionExtensions),
-            ServiceLifetime.Singleton,
-            filter => filter.ValidatorType != typeof(KeycloakOptionsValidator),
-            true);
     }
 
     private static void AddAuth(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)

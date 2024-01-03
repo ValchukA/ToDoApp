@@ -1,6 +1,4 @@
-﻿using ToDoApp.Api.Features.Tasks;
-
-namespace ToDoApp.Api.Mapping;
+﻿namespace ToDoApp.Api.Mapping;
 
 internal class AutoMapperWrapper : IObjectMapper
 {
