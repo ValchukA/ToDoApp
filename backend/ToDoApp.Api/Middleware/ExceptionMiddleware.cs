@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Pipeline;
+﻿namespace ToDoApp.Api.Middleware;
 
 internal class ExceptionMiddleware
 {

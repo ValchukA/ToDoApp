@@ -1,10 +1,10 @@
-﻿namespace ToDoApp.Api.Pipeline;
+﻿namespace ToDoApp.Api.Middleware;
 
 internal class ValidationFilter : IAsyncActionFilter
 {
-    private readonly ILogger<ExceptionMiddleware> _logger;
+    private readonly ILogger<ValidationFilter> _logger;
 
-    public ValidationFilter(ILogger<ExceptionMiddleware> logger) => _logger = logger;
+    public ValidationFilter(ILogger<ValidationFilter> logger) => _logger = logger;
 
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
