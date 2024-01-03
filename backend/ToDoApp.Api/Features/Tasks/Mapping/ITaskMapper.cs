@@ -4,5 +4,5 @@ public interface ITaskMapper
 {
     CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest);
 
-    TaskResponse MapToResponse(TaskModel taskResult);
+    TaskResponse MapToResponse(TaskModel taskModel);
 }
