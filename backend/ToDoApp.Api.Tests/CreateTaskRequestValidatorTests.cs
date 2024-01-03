@@ -1,4 +1,4 @@
-﻿using ToDoApp.Api.Features.Tasks;
+﻿using ToDoApp.Api.Features.Tasks.Contracts;
 using ToDoApp.Api.Tasks;
 
 namespace ToDoApp.Api.Tests;

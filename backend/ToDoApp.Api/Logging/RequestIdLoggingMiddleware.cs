@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Middleware;
+﻿namespace ToDoApp.Api.Logging;
 
 internal class RequestIdLoggingMiddleware
 {
