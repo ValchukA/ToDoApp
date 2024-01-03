@@ -12,7 +12,6 @@ global using ToDoApp.Api.Features.Tasks.Mapping;
 global using ToDoApp.Api.Logging;
 global using ToDoApp.Bll;
 global using ToDoApp.Bll.Exceptions;
-global using ToDoApp.Bll.Extensions;
 global using ToDoApp.Bll.Models.Commands;
 global using ToDoApp.Bll.Models.Queries;
 global using ToDoApp.Bll.Models.Results;
