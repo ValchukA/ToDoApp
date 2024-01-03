@@ -57,7 +57,7 @@ internal class ExceptionMiddleware
         string errorMessage,
         Exception exception)
     {
-        var errorResponse = new ErrorResponse
+        var errorResponse = new
         {
             ErrorMessage = _isDevelopmentEnvironment ? exception.ToString() : errorMessage,
             RequestId = httpContext.TraceIdentifier,
