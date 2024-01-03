@@ -16,16 +16,16 @@ public class TasksController : ControllerBase
     [HttpGet($"{{{nameof(id)}}}", Name = nameof(GetTaskAsync))]
     public async Task<ActionResult<TaskResponse>> GetTaskAsync(Guid id)
     {
-        var result = await _mediator.Send(new GetTaskQuery(id));
+        var foundTask = await _mediator.Send(new GetTaskQuery(id));
 
-        return _mapper.MapToResponse(result);
+        return _mapper.MapToResponse(foundTask);
     }
 
     [HttpPost]
     public async Task<ActionResult<TaskResponse>> CreateTaskAsync(CreateTaskRequest requestModel)
     {
-        var result = await _mediator.Send(_mapper.MapToCommand(requestModel));
-        var response = _mapper.MapToResponse(result);
+        var createdTask = await _mediator.Send(_mapper.MapToCommand(requestModel));
+        var response = _mapper.MapToResponse(createdTask);
 
         return CreatedAtRoute(nameof(GetTaskAsync), new { response.Id }, response);
     }
