@@ -16,4 +16,4 @@ global using ToDoApp.Bll.Features.Common.Exceptions;
 global using ToDoApp.Bll.Features.Tasks;
 global using ToDoApp.Bll.Features.Tasks.Create;
 global using ToDoApp.Bll.Features.Tasks.Get;
-global using ToDoApp.Storage.MongoDb.Extensions;
+global using ToDoApp.Storage.MongoDb;

@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Storage.MongoDb.Validation;
+﻿namespace ToDoApp.Storage.MongoDb.Options;
 
 internal class MongoDbOptionsValidator : AbstractValidator<MongoDbOptions>
 {

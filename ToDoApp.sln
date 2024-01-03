@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Api", "backend\ToDo
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "compose\docker-compose.dcproj", "{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Common", "backend\ToDoApp.Common\ToDoApp.Common.csproj", "{0EED78BE-235B-402C-AD55-46E5CD68C814}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Bll", "backend\ToDoApp.Bll\ToDoApp.Bll.csproj", "{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Storage.MongoDb", "backend\ToDoApp.Storage.MongoDb\ToDoApp.Storage.MongoDb.csproj", "{8D745E1C-C287-42F4-A52D-B53829545A93}"
@@ -37,10 +35,6 @@ Global
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC97A5B-12D1-4D96-BB90-E40F29A78FCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EED78BE-235B-402C-AD55-46E5CD68C814}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D34758-DDA3-46E2-A567-F5BF2EC4ECFE}.Release|Any CPU.ActiveCfg = Release|Any CPU

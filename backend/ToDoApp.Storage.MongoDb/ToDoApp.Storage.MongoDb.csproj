@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDoApp.Bll\ToDoApp.Bll.csproj" />
-    <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
   </ItemGroup>
 
 </Project>

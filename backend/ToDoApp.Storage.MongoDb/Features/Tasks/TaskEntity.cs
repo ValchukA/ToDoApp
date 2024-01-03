@@ -1,6 +1,5 @@
-﻿namespace ToDoApp.Storage.MongoDb.Entities;
+﻿namespace ToDoApp.Storage.MongoDb.Features.Tasks;
 
-[MongoCollection(CollectionName = "tasks")]
 internal record TaskEntity
 {
     public Guid Id { get; init; }
