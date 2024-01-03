@@ -1,7 +1,4 @@
-﻿using ToDoApp.Api.Auth;
-using ToDoApp.Api.Features.Tasks.Mapping;
-
-namespace ToDoApp.Api;
+﻿namespace ToDoApp.Api;
 
 internal static class DependencyInjectionExtensions
 {
