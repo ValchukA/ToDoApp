@@ -1,8 +1,6 @@
-﻿using ToDoApp.Api.Features.Tasks.Contracts;
+﻿namespace ToDoApp.Api.Features.Tasks.Mapping;
 
-namespace ToDoApp.Api.Features.Tasks.Mapping;
-
-public interface IObjectMapper
+public interface ITaskMapper
 {
     CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest);
 

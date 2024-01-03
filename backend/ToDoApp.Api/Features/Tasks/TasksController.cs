@@ -5,9 +5,9 @@
 public class TasksController : ControllerBase
 {
     private readonly ISender _mediator;
-    private readonly IObjectMapper _mapper;
+    private readonly ITaskMapper _mapper;
 
-    public TasksController(ISender mediator, IObjectMapper mapper)
+    public TasksController(ISender mediator, ITaskMapper mapper)
     {
         _mediator = mediator;
         _mapper = mapper;

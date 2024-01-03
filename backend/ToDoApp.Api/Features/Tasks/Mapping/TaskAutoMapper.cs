@@ -1,8 +1,6 @@
-﻿using ToDoApp.Api.Features.Tasks.Contracts;
+﻿namespace ToDoApp.Api.Features.Tasks.Mapping;
 
-namespace ToDoApp.Api.Features.Tasks.Mapping;
-
-internal class AutoMapperWrapper : IObjectMapper
+internal class TaskAutoMapper : ITaskMapper
 {
     private static readonly Mapper _mapper = new(new MapperConfiguration(configuration =>
     {
