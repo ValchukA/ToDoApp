@@ -10,5 +10,5 @@ internal class TaskAutoMapper : ITaskMapper
 
     public CreateTaskCommand MapToCommand(CreateTaskRequest createTaskRequest) => _mapper.Map<CreateTaskCommand>(createTaskRequest);
 
-    public TaskResponse MapToResponse(TaskModel taskResult) => _mapper.Map<TaskResponse>(taskResult);
+    public TaskResponse MapToResponse(TaskModel taskModel) => _mapper.Map<TaskResponse>(taskModel);
 }
