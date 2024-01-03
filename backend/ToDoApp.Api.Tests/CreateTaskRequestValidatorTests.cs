@@ -1,4 +1,5 @@
-﻿using ToDoApp.Api.Tasks;
+﻿using ToDoApp.Api.Features.Tasks;
+using ToDoApp.Api.Tasks;
 
 namespace ToDoApp.Api.Tests;
 

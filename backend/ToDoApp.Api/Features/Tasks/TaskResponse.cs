@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Tasks;
+﻿namespace ToDoApp.Api.Features.Tasks;
 
 public record TaskResponse
 {
