@@ -5,7 +5,7 @@ internal static class DependencyInjectionExtensions
     public static void AddApiServices(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)
     {
         services.AddControllers();
-        services.AddSingleton<ITaskMapper, TaskAutoMapper>();
+        services.AddSingleton<IObjectMapper, AutoMapperWrapper>();
         services.AddAuth(authOptions, environment);
 
         if (environment.IsDevelopment())

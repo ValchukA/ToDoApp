@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Features;
+﻿namespace ToDoApp.Api.Features.Common;
 
 internal class ExceptionMiddleware
 {

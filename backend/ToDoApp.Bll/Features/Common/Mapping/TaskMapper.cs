@@ -1,15 +1,15 @@
 ﻿using ToDoApp.Bll.Features.Tasks;
 using ToDoApp.Bll.Features.Tasks.Create;
 
-namespace ToDoApp.Bll.Features.Tasks.Mapping;
+namespace ToDoApp.Bll.Features.Common.Mapping;
 
 internal class TaskMapper : ITaskMapper
 {
-    public CreateTaskDto MapToDto(CreateTaskCommand createTaskCommand, DateTime creationDateUtc, string createdBy) => new()
+    public TaskModel MapToModel(CreateTaskCommand createTaskCommand, Guid taskId, string createdBy) => new()
     {
+        Id = taskId,
         Title = createTaskCommand.Title,
         Description = createTaskCommand.Description,
-        CreationDateUtc = creationDateUtc,
         CreatedBy = createdBy,
     };
 

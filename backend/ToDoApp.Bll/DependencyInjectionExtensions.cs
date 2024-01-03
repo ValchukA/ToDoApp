@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.Bll;
+﻿using ToDoApp.Bll.Features.Common.Mapping;
+
+namespace ToDoApp.Bll;
 
 public static class DependencyInjectionExtensions
 {

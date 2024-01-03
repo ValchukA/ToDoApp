@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Bll.Features.Exceptions;
+﻿namespace ToDoApp.Bll.Features.Common.Exceptions;
 
 public class UnauthorizedException : Exception
 {
