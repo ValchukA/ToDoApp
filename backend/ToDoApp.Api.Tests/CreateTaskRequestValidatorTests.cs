@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.Api.Tests;
+﻿using ToDoApp.Api.Tasks;
+
+namespace ToDoApp.Api.Tests;
 
 public class CreateTaskRequestValidatorTests
 {

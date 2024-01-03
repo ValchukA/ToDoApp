@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api;
+﻿namespace ToDoApp.Api.User;
 
 internal class User : IUser
 {

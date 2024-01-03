@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Validation;
+﻿namespace ToDoApp.Api.Options;
 
 internal class KeycloakOptionsValidator : AbstractValidator<KeycloakOptions>
 {

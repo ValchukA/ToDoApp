@@ -1,6 +1,6 @@
-﻿namespace ToDoApp.Api.Extensions;
+﻿namespace ToDoApp.Api;
 
-internal static class ServiceCollectionExtensions
+internal static class DependencyInjectionExtensions
 {
     public static void AddApiServices(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)
     {
@@ -8,7 +8,6 @@ internal static class ServiceCollectionExtensions
         services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
         services.AddSingleton<IObjectMapper, AutoMapperWrapper>();
         services.AddValidation();
-        services.AddOptions();
         services.AddAuth(authOptions, environment);
 
         if (environment.IsDevelopment())
@@ -21,22 +20,16 @@ internal static class ServiceCollectionExtensions
     {
         services.AddFluentValidationAutoValidation();
         services.AddValidatorsFromAssemblyContaining(
-            typeof(ServiceCollectionExtensions),
+            typeof(DependencyInjectionExtensions),
             ServiceLifetime.Singleton,
             filter => filter.ValidatorType != typeof(KeycloakOptionsValidator),
             true);
     }
 
-    private static void AddOptions(this IServiceCollection services)
-        => services.AddOptions<TaskValidationOptions>()
-            .BindConfiguration(TaskValidationOptions.SectionKey)
-            .ValidateFluentValidation()
-            .ValidateOnStart();
-
     private static void AddAuth(this IServiceCollection services, KeycloakOptions authOptions, IWebHostEnvironment environment)
     {
         services.AddHttpContextAccessor();
-        services.AddScoped<IUser, User>();
+        services.AddScoped<IUser, User.User>();
         services.AddAuthentication().AddJwtBearer(options =>
         {
             options.Authority = authOptions.Authority;

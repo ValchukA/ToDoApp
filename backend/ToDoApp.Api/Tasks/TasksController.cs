@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Controllers;
+﻿namespace ToDoApp.Api.Tasks;
 
 [Route("api/tasks")]
 [ApiController]

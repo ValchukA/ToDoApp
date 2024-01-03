@@ -1,3 +1,6 @@
+using ToDoApp.Api.Pipeline;
+using ToDoApp.Api.Tasks;
+
 namespace ToDoApp.IntegrationTests;
 
 public class TasksControllerTests : IClassFixture<ApiSetup>

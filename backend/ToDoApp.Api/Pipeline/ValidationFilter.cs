@@ -1,4 +1,4 @@
-﻿namespace ToDoApp.Api.Filters;
+﻿namespace ToDoApp.Api.Pipeline;
 
 internal class ValidationFilter : IAsyncActionFilter
 {
@@ -14,7 +14,12 @@ internal class ValidationFilter : IAsyncActionFilter
                 .SelectMany(entry => entry.Value?.Errors ?? Enumerable.Empty<ModelError>())
                 .Select(error => error.ErrorMessage);
 
-            var errorResponse = new ErrorResponse(string.Join(" ", errorMessages));
+            var errorResponse = new ErrorResponse
+            {
+                ErrorMessage = string.Join(" ", errorMessages),
+                RequestId = context.HttpContext.TraceIdentifier,
+            };
+
             context.Result = new BadRequestObjectResult(errorResponse);
 
             _logger.LogError("Model validation failed");
