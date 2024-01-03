@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.6.0" />
     <PackageReference Include="MediatR" Version="12.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.8" />
@@ -19,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDoApp.Bll\ToDoApp.Bll.csproj" />
-    <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
     <ProjectReference Include="..\ToDoApp.Storage.MongoDb\ToDoApp.Storage.MongoDb.csproj" />
   </ItemGroup>
 
