@@ -2,7 +2,6 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY backend/ToDoApp.Api ToDoApp.Api
 COPY backend/ToDoApp.Bll ToDoApp.Bll
-COPY backend/ToDoApp.Common ToDoApp.Common
 COPY backend/ToDoApp.Storage.MongoDb ToDoApp.Storage.MongoDb
 COPY backend/Directory.Build.props .
 RUN dotnet publish ToDoApp.Api -c release -o /app
