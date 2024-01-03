@@ -1,7 +1,4 @@
-﻿using ToDoApp.Api.Features.Tasks.Contracts;
-using ToDoApp.Api.Features.Tasks.Mapping;
-
-namespace ToDoApp.Api.Features.Tasks;
+﻿namespace ToDoApp.Api.Features.Tasks;
 
 [Route("api/tasks")]
 [ApiController]

@@ -7,6 +7,7 @@ global using Serilog;
 global using ToDoApp.Api;
 global using ToDoApp.Api.Auth;
 global using ToDoApp.Api.Features;
+global using ToDoApp.Api.Features.Tasks.Contracts;
 global using ToDoApp.Api.Features.Tasks.Mapping;
 global using ToDoApp.Api.Logging;
 global using ToDoApp.Bll;
