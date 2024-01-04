@@ -6,5 +6,9 @@ public static class DependencyInjectionExtensions
     {
         services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining(typeof(DependencyInjectionExtensions)));
         services.AddSingleton<IObjectMapper, ObjectMapper>();
+        services.AddValidatorsFromAssemblyContaining(
+            typeof(DependencyInjectionExtensions),
+            ServiceLifetime.Singleton,
+            includeInternalTypes: true);
     }
 }
